@@ -13,6 +13,7 @@ class Seller extends Model
 
     protected $fillable = ['company_id', 'user_id'];
 
+
     /**
      * @return BelongsTo
      */
@@ -34,6 +35,6 @@ class Seller extends Model
      */
     public function sales(): HasMany
     {
-        return $this->hasMany(Seller::class);
+        return $this->hasMany(Sale::class);
     }
 }
