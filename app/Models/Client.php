@@ -15,11 +15,11 @@ class Client extends Model
     protected $fillable = ['address_id', 'user_id'];
 
     /**
-     * @return HasOne
+     * @return BelongsTo
      */
-    public function address(): HasOne
+    public function address(): BelongsTo
     {
-        return $this->hasOne(Address::class);
+        return $this->belongsTo(Address::class);
     }
 
     /**
