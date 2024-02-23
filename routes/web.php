@@ -29,6 +29,22 @@ Route::middleware('auth')->group(function () {
 
 
     Route::resource('/clients', \App\Http\Controllers\ClientController::class);
+
+    Route::get('/chart', function () {
+
+        $fields = implode(',', \App\Models\SalesCommission::getColumns());
+
+        $question = 'Gere um grafico das vendas por empresa no eixo y ao longo dos ultimos 5 anos';
+
+       $config = \OpenAI\Laravel\Facades\OpenAI::completions()->create([
+           'model'  =>  'gpt-3.5-turbo',
+           'prompt' =>  "considerando a lista de campos ($fields), gere uma configuração json do vega-lite v5 (sem campos de dados e com descrição) que atenda o seguinte pedido $question. Resposta:",
+           'max_tokens' =>  1500
+       ])->choices[0]->text;
+
+       dd($config);
+
+    });
 });
 
 require __DIR__.'/auth.php';
