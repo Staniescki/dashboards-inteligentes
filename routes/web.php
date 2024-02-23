@@ -41,9 +41,6 @@ Route::middleware('auth')->group(function () {
            'prompt' =>  "considerando a lista de campos ($fields), gere uma configuração json do vega-lite v5 (sem campos de dados e com descrição) que atenda o seguinte pedido $question. Resposta:",
            'max_tokens' =>  1500
        ])->choices[0]->text;
-
-       dd($config);
-
     });
 });
 
