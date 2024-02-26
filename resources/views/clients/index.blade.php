@@ -32,20 +32,7 @@
                     </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                    @foreach ($clients as $client)
-                        <tr>
-                            <td class="py-4 pl-4 pr-3 text-sm font-medium text-gray-900 whitespace-nowrap sm:pl-6">{{ $client->user->name }}</td>
-                            <td class="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">{{ $client->user->email }}</td>
-                            <td class="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">{{ $client->address->city }}</td>
-                            <td class="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">{{ $client->address->state }}</td>
-                            <td class="relative py-4 pl-3 pr-4 text-sm font-medium text-right whitespace-nowrap sm:pr-6">
-                                <a href="{{ route('clients.edit', $client->id) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                            </td>
-                            <td class="relative py-4 pl-3 pr-4 text-sm font-medium text-right whitespace-nowrap sm:pr-6">
-                                delete
-                            </td>
-                        </tr>
-                    @endforeach
+
                     <!-- More people... -->
                     </tbody>
                 </table>
