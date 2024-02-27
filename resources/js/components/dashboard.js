@@ -1,11 +1,11 @@
 export default () => ({
     loading: false,
-    generateReport() {
+    async generateReport() {
         this.loading = true;
 
         const sizes = this.$refs.vegalitecontainer.getBoundingClientRect();
 
-        this.$wire.generateReport()
+        await this.$wire.generateReport()
             .then((result) => {
                 var dataset = this.$wire.get('dataset');
 
