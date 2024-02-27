@@ -4,19 +4,19 @@
             <div class="px-4 sm:px-6 lg:px-8">
 
                 <x-heading
-                    title="Client"
-                    description="A list of all the clients."
-                    btn-label="Add Client"
-                    :route="route('clients.create')" />
+                    title="Sales"
+                    description="A list of all sales."
+                />
 
                 <div class="w-full overflow-hidden md:rounded-lg">
                     <livewire:table
-                        resource="Client"
+                        resource="Sale"
                         :columns="[
-                        ['label' => 'Client', 'column' => 'user.name'],
-                        ['label' => 'Email','column' => 'user.email'],
-                        ['label' => 'City', 'column' => 'address.city'],
-                        ['label' => 'State', 'column' => 'address.state'],
+                        ['label' => 'Seller', 'column' => 'seller.user.name'],
+                        ['label' => 'Client','column' => 'client.user.name'],
+                        ['label' => 'Solod at', 'column' => 'sold_at'],
+                        ['label' => 'Status', 'column' => 'status'],
+                        ['label' => 'Total Amount', 'column' => 'total_amount']
                     ]
                     "
                         edit="clients.edit"
